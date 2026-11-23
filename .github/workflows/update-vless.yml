@@ -1,3 +1,6 @@
+
+    
+  
 name: Update personal VLESS feed
 
 on:
@@ -61,25 +64,14 @@ jobs:
       - name: Prepare static website artifact
         shell: bash
         run: |
+          # The repository is named "feeds" and GitHub Pages serves it at /feeds/.
+          # Copy the contents of the generated directory to the deployment root.
+          test -s feeds/vless.txt
+          test -f feeds/index.html
           mkdir -p _site
-          rsync -a ./ _site/ \
-            --exclude='/.git/' \
-            --exclude='/.github/' \
-            --exclude='/_site/' \
-            --exclude='/bin/' \
-            --exclude='/scripts/' \
-            --exclude='/tests/' \
-            --exclude='/__pycache__/' \
-            --exclude='/.venv/' \
-            --exclude='/sources.json' \
-            --exclude='/collector.py' \
-            --exclude='/requirements.txt' \
-            --exclude='/README.md' \
-            --exclude='/*.zip'
+          cp -a feeds/. _site/
           touch _site/.nojekyll
-          if [ ! -f _site/index.html ] && [ ! -f _site/index.htm ]; then
-            printf '%s\n' '<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=feeds/"><title>VLESS Feed</title></head><body><a href="feeds/">VLESS Feed</a></body></html>' > _site/index.html
-          fi
+          test -s _site/vless.txt
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -92,3 +84,4 @@ jobs:
       - name: Deploy Pages now (no reliance on token-push rebuild)
         id: deployment
         uses: actions/deploy-pages@v4
+
