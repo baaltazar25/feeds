@@ -24,8 +24,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Checkout website repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -49,23 +50,45 @@ jobs:
           MAX_WORKERS: '12'
           PROBE_TIMEOUT: '9'
 
-      - name: Commit generated subscriptions to default branch
+      - name: Commit generated subscriptions without rebasing generated files
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add feeds/
-          if ! git diff --cached --quiet; then
-            git commit -m 'chore: refresh VLESS subscriptions [skip ci]'
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
 
-      - name: Prepare static website artifact
+          for attempt in 1 2 3; do
+            echo "Push attempt ${attempt}/3"
+
+            # Update Git HEAD/index to the latest remote commit, but keep
+            # the freshly generated feed files in the working directory.
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --mixed "origin/${GITHUB_REF_NAME}"
+
+            # Stage only generated files: never overwrite source code/workflows.
+            git add -A feeds/
+            if git diff --cached --quiet; then
+              echo 'Feeds have not changed; nothing to commit.'
+              break
+            fi
+
+            git commit -m 'chore: refresh VLESS subscriptions [skip ci]'
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo 'Feed commit successfully pushed.'
+              break
+            fi
+
+            if [ "${attempt}" -eq 3 ]; then
+              echo 'Failed to push generated feeds after three attempts.' >&2
+              exit 1
+            fi
+            sleep 3
+          done
+
+      - name: Prepare GitHub Pages artifact for project site
         shell: bash
         run: |
-          # The repository is named "feeds" and GitHub Pages serves it at /feeds/.
-          # Copy the contents of the generated directory to the deployment root.
+          set -euo pipefail
           test -s feeds/vless.txt
           test -f feeds/index.html
           mkdir -p _site
@@ -81,7 +104,7 @@ jobs:
         with:
           path: _site
 
-      - name: Deploy Pages now (no reliance on token-push rebuild)
+      - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
