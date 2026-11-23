@@ -1,18 +1,18 @@
 {
-  "updated_utc": "2026-11-23T11:01:51+00:00",
+  "updated_utc": "2026-11-23T11:31:14+00:00",
   "runner_location": "GitHub-hosted runner (not guaranteed Russia)",
-  "unique_collected": 1900,
+  "unique_collected": 1898,
   "tested": 240,
-  "verified": 123,
-  "ru_verified": 81,
-  "ru_whitelist_verified": 27,
-  "reality_verified": 43,
+  "verified": 136,
+  "ru_verified": 94,
+  "ru_whitelist_verified": 44,
+  "reality_verified": 70,
   "verified_by_transport": {
-    "tcp": 46,
-    "raw": 1,
-    "xhttp": 25,
-    "grpc": 7,
-    "ws": 44
+    "tcp": 69,
+    "raw": 2,
+    "xhttp": 28,
+    "grpc": 8,
+    "ws": 29
   },
   "sources": [
     {
@@ -32,7 +32,7 @@
     {
       "name": "PulseProxy-whitelist",
       "group": "ru_whitelist",
-      "fetched_links": 752,
+      "fetched_links": 750,
       "parsed_links": 693,
       "error": null
     },
@@ -46,8 +46,8 @@
     {
       "name": "RUVPN-mobile",
       "group": "ru_general",
-      "fetched_links": 99,
-      "parsed_links": 99,
+      "fetched_links": 84,
+      "parsed_links": 83,
       "error": null
     },
     {
@@ -68,7 +68,7 @@
       "name": "imnocrew-top100",
       "group": "global",
       "fetched_links": 100,
-      "parsed_links": 95,
+      "parsed_links": 94,
       "error": null
     }
   ]
