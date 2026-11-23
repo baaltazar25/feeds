@@ -1,25 +1,25 @@
 {
-  "updated_utc": "2026-11-23T10:31:15+00:00",
+  "updated_utc": "2026-11-23T11:01:51+00:00",
   "runner_location": "GitHub-hosted runner (not guaranteed Russia)",
-  "unique_collected": 1902,
+  "unique_collected": 1900,
   "tested": 240,
-  "verified": 118,
-  "ru_verified": 75,
-  "ru_whitelist_verified": 16,
-  "reality_verified": 40,
+  "verified": 123,
+  "ru_verified": 81,
+  "ru_whitelist_verified": 27,
+  "reality_verified": 43,
   "verified_by_transport": {
-    "tcp": 39,
+    "tcp": 46,
     "raw": 1,
-    "ws": 41,
-    "xhttp": 29,
-    "grpc": 8
+    "xhttp": 25,
+    "grpc": 7,
+    "ws": 44
   },
   "sources": [
     {
       "name": "RUVPN-whitelist-CIDR",
       "group": "ru_whitelist",
-      "fetched_links": 71,
-      "parsed_links": 71,
+      "fetched_links": 66,
+      "parsed_links": 66,
       "error": null
     },
     {
@@ -32,8 +32,8 @@
     {
       "name": "PulseProxy-whitelist",
       "group": "ru_whitelist",
-      "fetched_links": 759,
-      "parsed_links": 702,
+      "fetched_links": 752,
+      "parsed_links": 693,
       "error": null
     },
     {
