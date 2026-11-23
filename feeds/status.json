@@ -1,18 +1,18 @@
 {
-  "updated_utc": "2026-11-23T10:16:39+00:00",
+  "updated_utc": "2026-11-23T10:31:15+00:00",
   "runner_location": "GitHub-hosted runner (not guaranteed Russia)",
   "unique_collected": 1902,
   "tested": 240,
-  "verified": 124,
-  "ru_verified": 82,
-  "ru_whitelist_verified": 17,
-  "reality_verified": 38,
+  "verified": 118,
+  "ru_verified": 75,
+  "ru_whitelist_verified": 16,
+  "reality_verified": 40,
   "verified_by_transport": {
-    "tcp": 42,
+    "tcp": 39,
     "raw": 1,
-    "xhttp": 28,
-    "grpc": 8,
-    "ws": 45
+    "ws": 41,
+    "xhttp": 29,
+    "grpc": 8
   },
   "sources": [
     {
