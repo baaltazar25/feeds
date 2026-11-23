@@ -1,0 +1,42 @@
+[
+  {
+    "name": "RUVPN-whitelist-CIDR",
+    "group": "ru_whitelist",
+    "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt"
+  },
+  {
+    "name": "RUVPN-whitelist-SNI",
+    "group": "ru_whitelist",
+    "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt"
+  },
+  {
+    "name": "PulseProxy-whitelist",
+    "group": "ru_whitelist",
+    "url": "https://raw.githubusercontent.com/pie-with-jam/PulseProxy/main/githubmirror/30.txt"
+  },
+  {
+    "name": "wlunlocker-whitelist",
+    "group": "ru_whitelist",
+    "url": "https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt"
+  },
+  {
+    "name": "RUVPN-mobile",
+    "group": "ru_general",
+    "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt"
+  },
+  {
+    "name": "wlunlocker-blacklist",
+    "group": "ru_general",
+    "url": "https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt"
+  },
+  {
+    "name": "mehrtat-VLESS",
+    "group": "global",
+    "url": "https://raw.githubusercontent.com/mehrtat/vless-collector/main/sub.txt"
+  },
+  {
+    "name": "imnocrew-top100",
+    "group": "global",
+    "url": "https://raw.githubusercontent.com/imnocrew/vpn-configs/master/top100-vless.txt"
+  }
+]

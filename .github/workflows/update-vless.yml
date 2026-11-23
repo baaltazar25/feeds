@@ -1,0 +1,94 @@
+name: Update personal VLESS feed
+
+on:
+  schedule:
+    - cron: '11,41 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: personal-vless-feed
+  cancel-in-progress: false
+
+jobs:
+  collect-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Install official Xray-core (SHA256 verified)
+        run: python scripts/install_xray.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Collect and test public VLESS nodes
+        run: python collector.py
+        env:
+          XRAY_BIN: ${{ github.workspace }}/bin/xray
+          MAX_CANDIDATES: '240'
+          MAX_WORKERS: '12'
+          PROBE_TIMEOUT: '9'
+
+      - name: Commit generated subscriptions to default branch
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add feeds/
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh VLESS subscriptions [skip ci]'
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Prepare static website artifact
+        shell: bash
+        run: |
+          mkdir -p _site
+          rsync -a ./ _site/ \
+            --exclude='/.git/' \
+            --exclude='/.github/' \
+            --exclude='/_site/' \
+            --exclude='/bin/' \
+            --exclude='/scripts/' \
+            --exclude='/tests/' \
+            --exclude='/__pycache__/' \
+            --exclude='/.venv/' \
+            --exclude='/sources.json' \
+            --exclude='/collector.py' \
+            --exclude='/requirements.txt' \
+            --exclude='/README.md' \
+            --exclude='/*.zip'
+          touch _site/.nojekyll
+          if [ ! -f _site/index.html ] && [ ! -f _site/index.htm ]; then
+            printf '%s\n' '<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=feeds/"><title>VLESS Feed</title></head><body><a href="feeds/">VLESS Feed</a></body></html>' > _site/index.html
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy Pages now (no reliance on token-push rebuild)
+        id: deployment
+        uses: actions/deploy-pages@v4
