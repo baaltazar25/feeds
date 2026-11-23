@@ -1,0 +1,75 @@
+{
+  "updated_utc": "2026-11-23T10:16:39+00:00",
+  "runner_location": "GitHub-hosted runner (not guaranteed Russia)",
+  "unique_collected": 1902,
+  "tested": 240,
+  "verified": 124,
+  "ru_verified": 82,
+  "ru_whitelist_verified": 17,
+  "reality_verified": 38,
+  "verified_by_transport": {
+    "tcp": 42,
+    "raw": 1,
+    "xhttp": 28,
+    "grpc": 8,
+    "ws": 45
+  },
+  "sources": [
+    {
+      "name": "RUVPN-whitelist-CIDR",
+      "group": "ru_whitelist",
+      "fetched_links": 71,
+      "parsed_links": 71,
+      "error": null
+    },
+    {
+      "name": "RUVPN-whitelist-SNI",
+      "group": "ru_whitelist",
+      "fetched_links": 0,
+      "parsed_links": 0,
+      "error": "ValueError: no VLESS URIs found"
+    },
+    {
+      "name": "PulseProxy-whitelist",
+      "group": "ru_whitelist",
+      "fetched_links": 759,
+      "parsed_links": 702,
+      "error": null
+    },
+    {
+      "name": "wlunlocker-whitelist",
+      "group": "ru_whitelist",
+      "fetched_links": 565,
+      "parsed_links": 562,
+      "error": null
+    },
+    {
+      "name": "RUVPN-mobile",
+      "group": "ru_general",
+      "fetched_links": 99,
+      "parsed_links": 99,
+      "error": null
+    },
+    {
+      "name": "wlunlocker-blacklist",
+      "group": "ru_general",
+      "fetched_links": 935,
+      "parsed_links": 722,
+      "error": null
+    },
+    {
+      "name": "mehrtat-VLESS",
+      "group": "global",
+      "fetched_links": 83,
+      "parsed_links": 81,
+      "error": null
+    },
+    {
+      "name": "imnocrew-top100",
+      "group": "global",
+      "fetched_links": 100,
+      "parsed_links": 95,
+      "error": null
+    }
+  ]
+}
