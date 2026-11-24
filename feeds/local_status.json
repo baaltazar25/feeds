@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-11-24T05:20:50+00:00",
+  "updated_utc": "2026-11-24T05:50:50+00:00",
   "probe_location": "local PC network route (depends on active VPN/routing)",
   "transport_check": "Xray SOCKS5 -> HTTPS 204, certificate verification enabled",
   "unique_collected": 228,
   "tested": 228,
-  "verified": 1,
-  "ru_verified": 0,
+  "verified": 3,
+  "ru_verified": 2,
   "sources": [
     {
       "source": "ru_verified.txt",
