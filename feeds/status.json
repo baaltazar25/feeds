@@ -1,24 +1,25 @@
 {
-  "updated_utc": "2026-11-23T22:02:10+00:00",
+  "updated_utc": "2026-11-24T05:57:43+00:00",
   "runner_location": "GitHub-hosted runner (not guaranteed Russia)",
-  "unique_collected": 1808,
+  "unique_collected": 1871,
   "tested": 240,
-  "verified": 101,
-  "ru_verified": 65,
-  "ru_whitelist_verified": 10,
-  "reality_verified": 36,
+  "verified": 158,
+  "ru_verified": 117,
+  "ru_whitelist_verified": 60,
+  "reality_verified": 71,
   "verified_by_transport": {
-    "xhttp": 22,
-    "ws": 35,
-    "tcp": 34,
-    "grpc": 10
+    "tcp": 71,
+    "xhttp": 21,
+    "raw": 2,
+    "ws": 58,
+    "grpc": 6
   },
   "sources": [
     {
       "name": "RUVPN-whitelist-CIDR",
       "group": "ru_whitelist",
-      "fetched_links": 69,
-      "parsed_links": 69,
+      "fetched_links": 90,
+      "parsed_links": 90,
       "error": null
     },
     {
@@ -31,43 +32,43 @@
     {
       "name": "PulseProxy-whitelist",
       "group": "ru_whitelist",
-      "fetched_links": 767,
-      "parsed_links": 707,
+      "fetched_links": 747,
+      "parsed_links": 687,
       "error": null
     },
     {
       "name": "wlunlocker-whitelist",
       "group": "ru_whitelist",
-      "fetched_links": 575,
-      "parsed_links": 572,
+      "fetched_links": 568,
+      "parsed_links": 565,
       "error": null
     },
     {
       "name": "RUVPN-mobile",
       "group": "ru_general",
-      "fetched_links": 78,
-      "parsed_links": 74,
+      "fetched_links": 135,
+      "parsed_links": 135,
       "error": null
     },
     {
       "name": "wlunlocker-blacklist",
       "group": "ru_general",
-      "fetched_links": 849,
-      "parsed_links": 634,
+      "fetched_links": 914,
+      "parsed_links": 698,
       "error": null
     },
     {
       "name": "mehrtat-VLESS",
       "group": "global",
-      "fetched_links": 42,
-      "parsed_links": 41,
+      "fetched_links": 74,
+      "parsed_links": 69,
       "error": null
     },
     {
       "name": "imnocrew-top100",
       "group": "global",
       "fetched_links": 100,
-      "parsed_links": 99,
+      "parsed_links": 98,
       "error": null
     }
   ]
