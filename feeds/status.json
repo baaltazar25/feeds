@@ -1,67 +1,67 @@
 {
-  "updated_utc": "2026-11-24T05:57:43+00:00",
+  "updated_utc": "2026-11-24T17:33:49+00:00",
   "runner_location": "GitHub-hosted runner (not guaranteed Russia)",
-  "unique_collected": 1871,
+  "unique_collected": 1859,
   "tested": 240,
-  "verified": 158,
-  "ru_verified": 117,
-  "ru_whitelist_verified": 60,
-  "reality_verified": 71,
+  "verified": 137,
+  "ru_verified": 100,
+  "ru_whitelist_verified": 38,
+  "reality_verified": 66,
   "verified_by_transport": {
-    "tcp": 71,
-    "xhttp": 21,
-    "raw": 2,
-    "ws": 58,
-    "grpc": 6
+    "tcp": 67,
+    "raw": 5,
+    "xhttp": 28,
+    "grpc": 16,
+    "ws": 21
   },
   "sources": [
     {
       "name": "RUVPN-whitelist-CIDR",
       "group": "ru_whitelist",
-      "fetched_links": 90,
-      "parsed_links": 90,
+      "fetched_links": 101,
+      "parsed_links": 101,
       "error": null
     },
     {
       "name": "RUVPN-whitelist-SNI",
       "group": "ru_whitelist",
-      "fetched_links": 0,
-      "parsed_links": 0,
-      "error": "ValueError: no VLESS URIs found"
+      "fetched_links": 6,
+      "parsed_links": 6,
+      "error": null
     },
     {
       "name": "PulseProxy-whitelist",
       "group": "ru_whitelist",
-      "fetched_links": 747,
-      "parsed_links": 687,
+      "fetched_links": 756,
+      "parsed_links": 698,
       "error": null
     },
     {
       "name": "wlunlocker-whitelist",
       "group": "ru_whitelist",
-      "fetched_links": 568,
-      "parsed_links": 565,
+      "fetched_links": 599,
+      "parsed_links": 596,
       "error": null
     },
     {
       "name": "RUVPN-mobile",
       "group": "ru_general",
-      "fetched_links": 135,
-      "parsed_links": 135,
+      "fetched_links": 75,
+      "parsed_links": 72,
       "error": null
     },
     {
       "name": "wlunlocker-blacklist",
       "group": "ru_general",
-      "fetched_links": 914,
-      "parsed_links": 698,
+      "fetched_links": 927,
+      "parsed_links": 669,
       "error": null
     },
     {
       "name": "mehrtat-VLESS",
       "group": "global",
-      "fetched_links": 74,
-      "parsed_links": 69,
+      "fetched_links": 47,
+      "parsed_links": 46,
       "error": null
     },
     {
