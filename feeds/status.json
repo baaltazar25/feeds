@@ -1,18 +1,18 @@
 {
-  "updated_utc": "2026-11-24T17:33:49+00:00",
+  "updated_utc": "2026-11-25T01:35:28+00:00",
   "runner_location": "GitHub-hosted runner (not guaranteed Russia)",
-  "unique_collected": 1859,
+  "unique_collected": 1889,
   "tested": 240,
-  "verified": 137,
-  "ru_verified": 100,
-  "ru_whitelist_verified": 38,
-  "reality_verified": 66,
+  "verified": 175,
+  "ru_verified": 134,
+  "ru_whitelist_verified": 57,
+  "reality_verified": 77,
   "verified_by_transport": {
-    "tcp": 67,
-    "raw": 5,
-    "xhttp": 28,
-    "grpc": 16,
-    "ws": 21
+    "tcp": 78,
+    "raw": 3,
+    "xhttp": 25,
+    "grpc": 14,
+    "ws": 55
   },
   "sources": [
     {
@@ -32,22 +32,22 @@
     {
       "name": "PulseProxy-whitelist",
       "group": "ru_whitelist",
-      "fetched_links": 756,
-      "parsed_links": 698,
+      "fetched_links": 780,
+      "parsed_links": 720,
       "error": null
     },
     {
       "name": "wlunlocker-whitelist",
       "group": "ru_whitelist",
-      "fetched_links": 599,
-      "parsed_links": 596,
+      "fetched_links": 587,
+      "parsed_links": 584,
       "error": null
     },
     {
       "name": "RUVPN-mobile",
       "group": "ru_general",
-      "fetched_links": 75,
-      "parsed_links": 72,
+      "fetched_links": 128,
+      "parsed_links": 128,
       "error": null
     },
     {
@@ -60,7 +60,7 @@
     {
       "name": "mehrtat-VLESS",
       "group": "global",
-      "fetched_links": 47,
+      "fetched_links": 46,
       "parsed_links": 46,
       "error": null
     },
