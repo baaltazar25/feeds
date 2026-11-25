@@ -1,22 +1,22 @@
 {
-  "updated_utc": "2026-11-25T10:22:04+00:00",
+  "updated_utc": "2026-11-25T10:51:57+00:00",
   "probe_location": "local PC network route (depends on active VPN/routing)",
   "transport_check": "Xray SOCKS5 -> HTTPS 204, certificate verification enabled",
-  "unique_collected": 233,
-  "tested": 233,
-  "verified": 3,
-  "ru_verified": 1,
+  "unique_collected": 236,
+  "tested": 236,
+  "verified": 1,
+  "ru_verified": 0,
   "sources": [
     {
       "source": "ru_verified.txt",
-      "found": 134,
-      "accepted": 134,
+      "found": 113,
+      "accepted": 113,
       "error": null
     },
     {
       "source": "vless.txt",
-      "found": 175,
-      "accepted": 175,
+      "found": 157,
+      "accepted": 157,
       "error": null
     },
     {
