@@ -1,1 +1,1 @@
-vless://92e8d9dc-8e3b-4f81-a278-d18c6bf1b962@194.76.146.25:443?encryption=none&security=tls&sni=app-base-njw3ky.pages.dev&fp=chrome&alpn=http%2F1.1&type=ws&host=app-base-njw3ky.pages.dev&path=%2Fws%3Fip%3D194.76.146.25%3A443#%5BOpenRay%5D%20%F0%9F%87%B3%F0%9F%87%B1NL-320
+vless://50414e45-4c5f-5a45-5553-d617da6e0a54@194.156.26.20:443?encryption=none&fp=firefox&path=/stream/PANEL_ZEUS/d617da6e0a54&security=tls&sni=qzzw7gegux3s.ersg587gatdd.workers.dev&type=ws#%5BOpenRay%5D%20%F0%9F%87%B8%F0%9F%87%A8SC-10
